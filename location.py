@@ -8,13 +8,25 @@ class Location:
         self.lon = lon      # longitude in degrees (-180 to 180)
 		
 # ADD BOILERPLATE HERE (__eq__ and __repr__ functions)
-    def __eq__(self, other):
+#####################################################################################
+### EQ method implementation
+### NameBool determines if the name of 2 locations are the same
+### LatBool determines if the latitude of 2 locations are the same
+### LonBool determines if the longitude of 2 locations are the same
+### All 3 must be satisfied for 2 locations to be the same, hence what is returned
+#####################################################################################	
+	def __eq__(self, other):
 	    NameBool = (self.name == other.name)
 	    LatBool = (self.lat == other.lat)
 	    LonBool = (self.lon == other.lon)
 	    return(NameBool and LatBool and LonBool)
 
-
+#####################################################################################
+### REPR method implementation
+### Displays the class name of 'Location', then the 3 objects associated with items
+### Name is a string, while lat & lon are floats, and require formatting to 1 digit
+### Escape characters used to make sure single quotes surround the name
+#####################################################################################
     def __repr__(self):
 	    return("Location(\'%s\', %.1f, %.1f)" %(self.name, self.lat, self.lon))
 		
