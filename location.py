@@ -1,6 +1,7 @@
 # CPE 202 Lab 0
 
 # represents a location using name, latitude and longitude
+from math import *
 class Location:
     def __init__(self, name, lat, lon):
         self.name = name    # string for name of location
@@ -10,16 +11,20 @@ class Location:
 # ADD BOILERPLATE HERE (__eq__ and __repr__ functions)
 #####################################################################################
 ### EQ method implementation
+### TypeBool determines if type of other is a location as well
 ### NameBool determines if the name of 2 locations are the same
 ### LatBool determines if the latitude of 2 locations are the same
 ### LonBool determines if the longitude of 2 locations are the same
 ### All 3 must be satisfied for 2 locations to be the same, hence what is returned
 #####################################################################################	
-	def __eq__(self, other):
-	    NameBool = (self.name == other.name)
-	    LatBool = (self.lat == other.lat)
-	    LonBool = (self.lon == other.lon)
-	    return(NameBool and LatBool and LonBool)
+    def __eq__(self, other):
+        TypeBool = (type(other) == Location)
+        if(TypeBool): # determines if 2 locations have same object values
+            NameBool = (self.name == other.name)
+            LatBool = (self.lat == other.lat)
+            LonBool = (self.lon == other.lon)
+            return (NameBool and LatBool and LonBool)
+        return(TypeBool) # immediately returns false if other is not a location
 
 #####################################################################################
 ### REPR method implementation
