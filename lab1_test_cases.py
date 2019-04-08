@@ -50,6 +50,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(0, len(list_val), low, list_val), None ) # Bad low & high = same result as target not being found
         self.assertEqual(bin_search(4, 5, len(list_val)-1, list_val), None ) # Search for 4 in upper half of List ([5,6,7,8,9,10]) = not found
         self.assertEqual(bin_search(9, low, 5, list_val), None ) # Search for 9 in lower half of List ([0,1,2,3,4,5]) = not found
+        self.assertEqual(bin_search(0, low, high, []), None) # test empty list
 
 if __name__ == "__main__":
         unittest.main()
