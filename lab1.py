@@ -35,6 +35,9 @@ def bin_search(target, low, high, int_list):  # must use recursion
 #   If target is not found returns None. If list is None, raises ValueError """
     if(type(int_list) == type(None)):
         raise ValueError
+    elif(int_list == []):
+        return None # test for empty list
+        
     elif( low <= high):
     
         mid = (low + high)//2 # mid point is defined
